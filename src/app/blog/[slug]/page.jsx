@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import Image from "next/image";
 import styles from "./singlePost.module.css";
 import PostUser from "@/components/postUser/postUser";
@@ -31,9 +32,6 @@ const SinglePostPage = async ({ params }) => {
 
   // FETCH DATA WITH AN API
   const post = await getData(slug);
-
-  // FETCH DATA WITHOUT AN API
-  // const post = await getPost(slug);
 
   return (
     <div className={styles.container}>

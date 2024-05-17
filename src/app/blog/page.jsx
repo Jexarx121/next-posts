@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import PostCard from '@/components/postCard/postCard';
 import styles from './blog.module.css'
 
@@ -15,9 +16,6 @@ const getData = async () => {
 const BlogPage = async () => {
 
   const posts = await getData();
-  
-  // Fetch data without API
-  // const posts = await getPosts();
 
   return (
     <div className={styles.container}>
