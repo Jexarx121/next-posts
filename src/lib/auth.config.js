@@ -28,17 +28,17 @@ export const authConfig = {
       // ONLY ADMIN CAN REACH ADMIN PAGE
       if (isOnAdminPanel && !user?.isAdmin) {
         return false;
-      };
+      }
 
       // ONLY AUTH USERS CAN REACH BLOG PAGE
       if (isOnBlogPage && !user) {
         return false;
-      };
+      }
 
       // ONLY UNAUTHENTICATED USERS CAN REACH LOGIN PAGE
       if (isOnLoginPage && user) {
         return Response.redirect(new URL("/", request.nextUrl))
-      };
+      }
 
       return true;
     }

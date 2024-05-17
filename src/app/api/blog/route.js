@@ -4,6 +4,7 @@ import { NextResponse } from "next/server";
 
 export const GET = async (request) => {
   try {
+    console.log(request);
     connectToDb();
 
     const posts = await Post.find();

@@ -13,13 +13,13 @@ const login = async (credentials) => {
 
     if (!user) {
       throw new Error("Wrong credentials!");
-    };
+    }
 
     const isPasswordCorrect = await bcrypt.compare(credentials.password, user.password);
 
     if (!isPasswordCorrect) {
       throw new Error("Wrong credentials!");
-    };
+    }
 
     return user;
   } catch (error) {
@@ -64,7 +64,7 @@ export const { handlers: { GET, POST }, auth, signIn, signOut } = NextAuth({
             });
 
             await newUser.save();
-          };
+          }
         } catch (error) {
           console.log(error);
           return false;

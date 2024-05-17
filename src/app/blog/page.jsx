@@ -1,6 +1,5 @@
 import PostCard from '@/components/postCard/postCard';
 import styles from './blog.module.css'
-import { getPosts } from '@/lib/data';
 
 // FETCH DATA WITH API
 const getData = async () => {
@@ -8,7 +7,7 @@ const getData = async () => {
 
   if (!res.ok) {
     throw new Error("Something went wrong")
-  };
+  }
 
   return res.json();
 }
