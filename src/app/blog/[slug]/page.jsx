@@ -1,4 +1,3 @@
-export const dynamic = 'force-dynamic';
 import Image from "next/image";
 import styles from "./singlePost.module.css";
 import PostUser from "@/components/postUser/postUser";
@@ -6,8 +5,9 @@ import { Suspense } from "react";
 import { getPost } from "@/lib/data";
 
 // FETCH DATA WITH AN API
+// https://next-posts-git-main-jexarx121s-projects.vercel.app
 const getData = async (slug) => {
-  const res = await fetch(`https://next-posts-git-main-jexarx121s-projects.vercel.app/api/blog/${slug}`);
+  const res = await fetch(`http://localhost:3000/api/blog/${slug}`);
 
   if (!res.ok) {
     throw new Error("Something went wrong");
