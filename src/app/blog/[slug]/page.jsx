@@ -6,8 +6,9 @@ import { getPost } from "@/lib/data";
 
 // FETCH DATA WITH AN API
 // https://next-posts-git-main-jexarx121s-projects.vercel.app
+// next-posts-git-deployment-jexarx121s-projects.vercel.app
 const getData = async (slug) => {
-  const res = await fetch(`http://localhost:3000/api/blog/${slug}`);
+  const res = await fetch(`https://next-posts-git-deployment-jexarx121s-projects.vercel.app/api/blog/${slug}`);
 
   if (!res.ok) {
     throw new Error("Something went wrong");
