@@ -4,10 +4,11 @@ import styles from './blog.module.css'
 // FETCH DATA WITH API
 // https://next-posts-git-main-jexarx121s-projects.vercel.app
 const getData = async () => {
-  console.log(process.env.VERCEL_URL);
   const res = await fetch(`https://${process.env.VERCEL_URL}/api/blog`, {next: {revalidate: 3600}});
 
   if (!res.ok) {
+    console.log(res);
+    console.error(`Failed to fetch data: ${res.status} ${res.statusText}`);
     throw new Error("Something went wrong")
   }
 
