@@ -1,10 +1,10 @@
+export const dynamic = 'force-dynamic';
 import { Post } from "@/lib/models";
 import { connectToDb } from "@/lib/utils";
 import { NextResponse } from "next/server";
 
-export const GET = async (request) => {
+export const GET = async (request) => { // eslint-disable-line
   try {
-    console.log(request);
     connectToDb();
 
     const posts = await Post.find();

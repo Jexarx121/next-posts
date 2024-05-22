@@ -1,4 +1,3 @@
-export const dynamic = 'force-dynamic';
 import Image from "next/image";
 import styles from "./singlePost.module.css";
 import PostUser from "@/components/postUser/postUser";
@@ -7,7 +6,7 @@ import { getPost } from "@/lib/data";
 
 // FETCH DATA WITH AN API
 const getData = async (slug) => {
-  const res = await fetch(`https://next-posts-git-main-jexarx121s-projects.vercel.app/api/blog/${slug}`);
+  const res = await fetch(`https://${process.env.VERCEL_URL}/api/blog/${slug}`);
 
   if (!res.ok) {
     throw new Error("Something went wrong");
@@ -51,7 +50,7 @@ const SinglePostPage = async ({ params }) => {
           <div className={styles.detailText}>
             <span className={styles.detailTitle}>Published</span>
             <span className={styles.detailValue}>
-              {post.createdAt.toString().slice(4, 16)}
+              {post.createdAt.toString().slice(5, 10)} - {post.createdAt.toString().slice(11, 16)}
             </span>
           </div>
         </div>
