@@ -5,8 +5,6 @@ import { Suspense } from "react";
 import { getPost } from "@/lib/data";
 
 // FETCH DATA WITH AN API
-// https://next-posts-git-main-jexarx121s-projects.vercel.app
-// next-posts-git-deployment-jexarx121s-projects.vercel.app
 const getData = async (slug) => {
   const res = await fetch(`https://${process.env.VERCEL_URL}/api/blog/${slug}`);
 
@@ -52,7 +50,7 @@ const SinglePostPage = async ({ params }) => {
           <div className={styles.detailText}>
             <span className={styles.detailTitle}>Published</span>
             <span className={styles.detailValue}>
-              {post.createdAt.toString().slice(4, 16)}
+              {post.createdAt.toString().slice(5, 10)} - {post.createdAt.toString().slice(11, 16)}
             </span>
           </div>
         </div>

@@ -2,7 +2,6 @@ import PostCard from '@/components/postCard/postCard';
 import styles from './blog.module.css'
 
 // FETCH DATA WITH API
-// https://next-posts-git-main-jexarx121s-projects.vercel.app
 const getData = async () => {
   const res = await fetch(`https://${process.env.VERCEL_URL}/api/blog`, {next: {revalidate: 3600}});
 
